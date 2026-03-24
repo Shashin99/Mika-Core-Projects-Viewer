@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | DevFolio</title>
+  <meta name="description" content="Get in touch to discuss your next project. Available for web development, mobile apps, data analytics, and automation projects on Upwork." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .form-success {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(20,190,70,0.12);
+      border: 1px solid rgba(20,190,70,0.3);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: #14be46;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .availability-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #14be46;
+      display: inline-block;
+      margin-right: 0.4rem;
+      box-shadow: 0 0 8px rgba(20,190,70,0.6);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.7; transform:scale(0.85);} }
+    .map-placeholder {
+      background: var(--clr-dark);
+      border-radius: var(--radius);
+      border: 1px solid var(--clr-border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--clr-mid);
+      margin-top: 1.5rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--clr-border);
+      padding: 1.25rem 0;
+    }
+    .faq-question {
+      font-weight: 600; font-size: 0.95rem; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--clr-light);
+      background: none; border: none; width: 100%; text-align: left;
+    }
+    .faq-answer {
+      font-size: 0.875rem; color: var(--clr-mid);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-answer.open { max-height: 200px; padding-top: 0.75rem; }
+    .faq-question i { transition: transform 0.3s; color: var(--clr-accent); }
+    .faq-question.open i { transform: rotate(45deg); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Dev<span>Folio</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="https://www.upwork.com" target="_blank" class="btn btn--primary navbar__cta">
+        <i class="fas fa-briefcase"></i> Hire Me on Upwork
+      </a>
+      <button class="navbar__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav__close" id="mobileClose"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="projects.html">Projects</a>
+  <a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span class="current">Contact</span></div>
+    <span class="section-label">Get In Touch</span>
+    <h1 class="section-title fade-up">Let's Work Together</h1>
+    <p class="section-subtitle fade-up">Have a project in mind? Fill out the form below or reach out directly. I respond within 24 hours.</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-card fade-up">
+        <h2 style="font-size:1.3rem; margin-bottom:0.25rem;">Send a Message</h2>
+        <p style="color:var(--clr-mid); font-size:0.85rem; margin-bottom:1.5rem;">I'll get back to you within 24 hours.</p>
+
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-check-circle" style="font-size:1.2rem;"></i>
+          Message sent! I'll be in touch shortly.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="budget">Project Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select a range...</option>
+              <option value="500-2000">$500 – $2,000</option>
+              <option value="2000-5000">$2,000 – $5,000</option>
+              <option value="5000-15000">$5,000 – $15,000</option>
+              <option value="15000+">$15,000+</option>
+              <option value="discuss">Prefer to discuss</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="category">Project Type *</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category...</option>
+              <option value="web">Web Development</option>
+              <option value="mobile">Mobile App</option>
+              <option value="data">Data Analytics / ML</option>
+              <option value="automation">Automation / Scraping</option>
+              <option value="ecommerce">E-Commerce</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" placeholder="e.g. Build a SaaS dashboard" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="message" placeholder="Describe your project, goals, timeline, and any specific requirements..." rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; padding:0.9rem;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="contact-sidebar fade-up" style="margin-bottom:1.5rem;">
+          <h3 style="font-size:1.1rem; margin-bottom:1.5rem;">Contact Info</h3>
+
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; color:#14be46; font-weight:600; font-size:0.9rem;">
+            <span class="availability-dot"></span> Available for New Projects
+          </div>
+
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <div class="contact-info-item__label">Location</div>
+              <div class="contact-info-item__value">India — Available Worldwide</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <div class="contact-info-item__label">Timezone</div>
+              <div class="contact-info-item__value">IST (UTC+5:30) · Flexible hours</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <div class="contact-info-item__label">Email</div>
+              <div class="contact-info-item__value">hello@devfolio.pro</div>
+            </div>
+          </div>
+          <div class="contact-info-item" style="border-bottom:none; padding-bottom:0;">
+            <i class="fas fa-reply"></i>
+            <div>
+              <div class="contact-info-item__label">Response Time</div>
+              <div class="contact-info-item__value">Within 24 hours</div>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--clr-border);">
+            <div style="font-size:0.78rem; color:var(--clr-mid); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem;">Connect Directly</div>
+            <a href="https://www.upwork.com" target="_blank" class="btn btn--primary" style="width:100%; justify-content:center; margin-bottom:0.75rem;">
+              <i class="fab fa-upwork"></i> Message on Upwork
+            </a>
+            <div class="social-links" style="justify-content:center;">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="contact-sidebar fade-up">
+          <h3 style="font-size:1.1rem; margin-bottom:1.25rem;">Why Work With Me?</h3>
+          <div style="display:flex; flex-direction:column; gap:0.9rem;">
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <i class="fas fa-check-circle" style="color:var(--clr-accent); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:600; font-size:0.875rem;">Top Rated Plus on Upwork</div>
+                <div style="font-size:0.8rem; color:var(--clr-mid);">Top 3% of all freelancers</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <i class="fas fa-check-circle" style="color:var(--clr-accent); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:600; font-size:0.875rem;">100% Job Success Score</div>
+                <div style="font-size:0.8rem; color:var(--clr-mid);">85+ completed contracts</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <i class="fas fa-check-circle" style="color:var(--clr-accent); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:600; font-size:0.875rem;">On-Time Delivery</div>
+                <div style="font-size:0.8rem; color:var(--clr-mid);">95%+ of projects delivered on or early</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+              <i class="fas fa-check-circle" style="color:var(--clr-accent); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:600; font-size:0.875rem;">Clear Communication</div>
+                <div style="font-size:0.8rem; color:var(--clr-mid);">Daily/weekly updates, no guesswork</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div style="margin-top:5rem;">
+      <div class="section-header fade-up">
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div style="max-width:780px; margin:0 auto;" class="fade-up">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do you handle project revisions and feedback? <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            I follow an iterative development approach with regular milestone reviews. Revisions are welcome throughout the project, and I clearly define what's included in-scope during our initial planning phase to avoid surprises.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is your typical process for starting a new project? <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            We start with a discovery call to understand your requirements, followed by a detailed proposal with timeline and milestones. Once agreed, I provide weekly progress updates and maintain an open channel (Slack/email) throughout.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do you offer post-project support and maintenance? <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! I offer 30-day free bug-fixing support after delivery. For ongoing maintenance, I offer monthly retainer packages to keep your application secure, updated, and performing at its best.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What happens if the project scope changes mid-way? <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Scope changes are handled professionally through a simple change request process. I'll provide a revised estimate for additional work, ensuring full transparency before proceeding.
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:none;">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can you work with my existing team or codebase? <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely. I'm comfortable integrating with existing teams and codebases. I follow standard Git workflows, write comprehensive documentation, and adhere to whatever coding standards your team uses.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Dev<span>Folio</span></div>
+        <p class="footer__brand-desc">Top-Rated Upwork freelancer delivering premium software solutions since 2018.</p>
+        <div class="social-links" style="margin-top:1.25rem;">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.upwork.com" target="_blank" class="social-link"><i class="fab fa-upwork"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Services</div>
+        <ul class="footer__links">
+          <li><a href="projects.html?filter=web">Web Development</a></li>
+          <li><a href="projects.html?filter=mobile">Mobile Apps</a></li>
+          <li><a href="projects.html?filter=data">Data Analytics</a></li>
+          <li><a href="projects.html?filter=automation">Automation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 DevFolio. All rights reserved.</span>
+      <span style="color: var(--clr-accent);">Top Rated Plus · 100% Job Success</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/page-effects.js"></script>
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('open'));
+  // Open this one if it was closed
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>

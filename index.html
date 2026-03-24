@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevFolio | Upwork Freelance Developer Portfolio</title>
+  <meta name="description" content="Professional freelance developer portfolio showcasing top-rated Upwork projects in web development, mobile apps, data analytics, and automation." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .hero { background: var(--clr-darkest); }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Dev<span>Folio</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://www.upwork.com" target="_blank" class="btn btn--primary navbar__cta">
+        <i class="fas fa-briefcase"></i> Hire Me on Upwork
+      </a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav__close" id="mobileClose"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://www.upwork.com" target="_blank" class="btn btn--primary">Hire Me on Upwork</a>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <i class="fas fa-circle" style="font-size:0.5rem; color: #14be46;"></i>
+        Available for New Projects
+      </div>
+      <h1 class="hero__title">
+        Building <span class="accent">Digital Solutions</span><br />That Deliver Results
+      </h1>
+      <p class="hero__subtitle">
+        Top-Rated Upwork Freelancer specializing in full-stack web development, mobile apps, data analytics pipelines, and intelligent automation systems. Trusted by 50+ global clients.
+      </p>
+      <div class="hero__actions">
+        <a href="projects.html" class="btn btn--primary">
+          <i class="fas fa-th-large"></i> View All Projects
+        </a>
+        <a href="contact.html" class="btn btn--outline">
+          <i class="fas fa-envelope"></i> Get In Touch
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-value" data-target="85" data-suffix="+">0+</div>
+          <div class="hero__stat-label">Projects Completed</div>
+        </div>
+        <div>
+          <div class="hero__stat-value" data-target="50" data-suffix="+">0+</div>
+          <div class="hero__stat-label">Happy Clients</div>
+        </div>
+        <div>
+          <div class="hero__stat-value" data-target="5" data-suffix="★">0★</div>
+          <div class="hero__stat-label">Average Rating</div>
+        </div>
+        <div>
+          <div class="hero__stat-value" data-target="6" data-suffix="+ yrs">0+ yrs</div>
+          <div class="hero__stat-label">Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TECH STRIP ════════════════ -->
+<div class="tech-strip">
+  <div class="tech-strip__track">
+    <span class="tech-strip__item"><i class="fab fa-react"></i> React.js</span>
+    <span class="tech-strip__item"><i class="fab fa-node-js"></i> Node.js</span>
+    <span class="tech-strip__item"><i class="fab fa-python"></i> Python</span>
+    <span class="tech-strip__item"><i class="fab fa-js"></i> JavaScript</span>
+    <span class="tech-strip__item"><i class="fab fa-aws"></i> AWS</span>
+    <span class="tech-strip__item"><i class="fas fa-database"></i> PostgreSQL</span>
+    <span class="tech-strip__item"><i class="fab fa-docker"></i> Docker</span>
+    <span class="tech-strip__item"><i class="fas fa-mobile-alt"></i> React Native</span>
+    <span class="tech-strip__item"><i class="fab fa-vuejs"></i> Vue.js</span>
+    <span class="tech-strip__item"><i class="fas fa-robot"></i> AI/ML</span>
+    <span class="tech-strip__item"><i class="fab fa-figma"></i> Figma</span>
+    <span class="tech-strip__item"><i class="fas fa-fire"></i> Firebase</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="tech-strip__item"><i class="fab fa-react"></i> React.js</span>
+    <span class="tech-strip__item"><i class="fab fa-node-js"></i> Node.js</span>
+    <span class="tech-strip__item"><i class="fab fa-python"></i> Python</span>
+    <span class="tech-strip__item"><i class="fab fa-js"></i> JavaScript</span>
+    <span class="tech-strip__item"><i class="fab fa-aws"></i> AWS</span>
+    <span class="tech-strip__item"><i class="fas fa-database"></i> PostgreSQL</span>
+    <span class="tech-strip__item"><i class="fab fa-docker"></i> Docker</span>
+    <span class="tech-strip__item"><i class="fas fa-mobile-alt"></i> React Native</span>
+    <span class="tech-strip__item"><i class="fab fa-vuejs"></i> Vue.js</span>
+    <span class="tech-strip__item"><i class="fas fa-robot"></i> AI/ML</span>
+    <span class="tech-strip__item"><i class="fab fa-figma"></i> Figma</span>
+    <span class="tech-strip__item"><i class="fas fa-fire"></i> Firebase</span>
+  </div>
+</div>
+
+<!-- ════════════════ FEATURED PROJECTS ════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A curated selection of my best work — from complex SaaS platforms to mobile apps and intelligent automation tools.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Card 1 -->
+      <div class="project-card stagger-item" data-category="web">
+        <div class="project-card__image">
+          <img src="assets/images/project_web_app.png" alt="SaaS Dashboard Platform" loading="lazy" />
+          <div class="project-card__overlay">
+            <a href="project-detail.html?id=1" class="btn btn--primary btn--sm">
+              <i class="fas fa-eye"></i> View
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">AWS</span>
+            <span class="tag--gray tag">Web</span>
+          </div>
+          <h3 class="project-card__title">SaaS Analytics Dashboard Platform</h3>
+          <p class="project-card__desc">Built a comprehensive multi-tenant SaaS analytics platform with real-time data visualization, role-based access control, and automated reporting.</p>
+        </div>
+        <div class="project-card__footer">
+          <span class="project-card__meta"><i class="fas fa-clock"></i> 3 months</span>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card stagger-item" data-category="mobile">
+        <div class="project-card__image">
+          <img src="assets/images/project_mobile_app.png" alt="Fintech Mobile App" loading="lazy" />
+          <div class="project-card__overlay">
+            <a href="project-detail.html?id=2" class="btn btn--primary btn--sm">
+              <i class="fas fa-eye"></i> View
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Firebase</span>
+            <span class="tag--gray tag">Mobile</span>
+          </div>
+          <h3 class="project-card__title">Fintech Mobile Banking App</h3>
+          <p class="project-card__desc">Cross-platform mobile banking app with biometric auth, real-time transaction tracking, and monthly spending analytics for iOS & Android.</p>
+        </div>
+        <div class="project-card__footer">
+          <span class="project-card__meta"><i class="fas fa-clock"></i> 2 months</span>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card stagger-item" data-category="data">
+        <div class="project-card__image">
+          <img src="assets/images/project_data_dashboard.png" alt="Data Analytics Pipeline" loading="lazy" />
+          <div class="project-card__overlay">
+            <a href="project-detail.html?id=3" class="btn btn--primary btn--sm">
+              <i class="fas fa-eye"></i> View
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Airflow</span>
+            <span class="tag--gray tag">Data</span>
+          </div>
+          <h3 class="project-card__title">Enterprise ETL & BI Pipeline</h3>
+          <p class="project-card__desc">Designed and implemented a scalable ETL data pipeline processing 10M+ daily records with real-time BI dashboards and automated anomaly detection.</p>
+        </div>
+        <div class="project-card__footer">
+          <span class="project-card__meta"><i class="fas fa-clock"></i> 4 months</span>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fade-up" style="text-align:center; margin-top: 3rem;">
+      <a href="projects.html" class="btn btn--outline">
+        <i class="fas fa-th-large"></i> View All 85+ Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TESTIMONIALS ════════════════ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Client Reviews</span>
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="section-subtitle">Real feedback from satisfied Upwork clients across the globe.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card stagger-item">
+        <div class="testimonial-card__quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-card__text">Absolutely outstanding work. Delivered our SaaS dashboard ahead of schedule with exceptional attention to detail. Will hire again without hesitation.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">JS</div>
+          <div>
+            <div class="testimonial-card__name">James Sullivan</div>
+            <div class="testimonial-card__role">CEO, TechVault Inc. — USA 🇺🇸</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card stagger-item">
+        <div class="testimonial-card__quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-card__text">Built our mobile app exactly as specified. Clear communication, clean code, and went above and beyond on testing. Highly recommended!</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">AM</div>
+          <div>
+            <div class="testimonial-card__name">Amira Mansour</div>
+            <div class="testimonial-card__role">Founder, FinEdge — UAE 🇦🇪</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card stagger-item">
+        <div class="testimonial-card__quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-card__text">The data pipeline reduced our processing time by 70%. Excellent understanding of complex requirements and flawless execution. A true professional.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">KL</div>
+          <div>
+            <div class="testimonial-card__name">Klaus Lehmann</div>
+            <div class="testimonial-card__role">CTO, DataStream GmbH — Germany 🇩🇪</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CTA BANNER ════════════════ -->
+<section class="section">
+  <div class="container fade-up">
+    <div class="cta-banner">
+      <h2>Ready to Start Your Next Project?</h2>
+      <p>Let's discuss your requirements and build something extraordinary together.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn--outline"><i class="fas fa-envelope"></i> Send a Message</a>
+        <a href="https://www.upwork.com" target="_blank" class="btn" style="background:#fff; color:var(--clr-accent); font-weight:700;">
+          <i class="fab fa-upwork"></i> Hire on Upwork
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Dev<span>Folio</span></div>
+        <p class="footer__brand-desc">Top-Rated Upwork freelancer delivering premium software solutions since 2018. Building the digital future, one project at a time.</p>
+        <div class="social-links" style="margin-top:1.25rem;">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.upwork.com" target="_blank" class="social-link"><i class="fab fa-upwork"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Services</div>
+        <ul class="footer__links">
+          <li><a href="projects.html?filter=web">Web Development</a></li>
+          <li><a href="projects.html?filter=mobile">Mobile Apps</a></li>
+          <li><a href="projects.html?filter=data">Data Analytics</a></li>
+          <li><a href="projects.html?filter=automation">Automation</a></li>
+          <li><a href="projects.html?filter=ecommerce">E-Commerce</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 DevFolio. All rights reserved.</span>
+      <span style="color: var(--clr-accent);">Top Rated Plus · 100% Job Success</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/hero-bg.js"></script>
+<script src="js/page-effects.js"></script>
+</body>
+</html>
