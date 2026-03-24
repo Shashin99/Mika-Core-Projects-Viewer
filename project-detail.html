@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Detail | DevFolio</title>
+  <meta name="description" content="Detailed view of a completed Upwork project — including tech stack, results, image gallery, and demo video." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .project-content p { color: var(--clr-mid); margin-bottom: 1.1rem; font-size: 0.975rem; }
+    .project-content h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: var(--clr-light); }
+    .project-content ul { list-style: disc; padding-left: 1.5rem; color: var(--clr-mid); }
+    .project-content ul li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .result-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .result-card__value { font-size: 2rem; font-weight: 800; color: var(--clr-accent); font-family: var(--ff-heading); }
+    .result-card__label { font-size: 0.8rem; color: var(--clr-mid); margin-top: 0.25rem; }
+    .video-thumb {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--clr-dark);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; position: absolute; inset: 0; }
+    .sidebar-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      position: sticky;
+      top: 100px;
+    }
+    .detail-layout { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+    @media (max-width: 900px) { .detail-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Dev<span>Folio</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://www.upwork.com" target="_blank" class="btn btn--primary navbar__cta">
+        <i class="fas fa-briefcase"></i> Hire Me on Upwork
+      </a>
+      <button class="navbar__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav__close" id="mobileClose"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- DETAIL HERO -->
+<div class="detail-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="projects.html">Projects</a>
+      <span>/</span>
+      <span class="current">SaaS Analytics Dashboard</span>
+    </div>
+
+    <div class="project-card__tags" style="margin-bottom:1rem;">
+      <span class="tag">Web Dev</span>
+      <span class="tag">React.js</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">AWS</span>
+    </div>
+    <h1 class="section-title" style="margin-bottom:0.5rem;">SaaS Analytics Dashboard Platform</h1>
+    <div style="display:flex; align-items:center; gap:1.5rem; color:var(--clr-mid); font-size:0.875rem; flex-wrap:wrap;">
+      <span><i class="fas fa-calendar"></i> March 2024</span>
+      <span><i class="fas fa-clock"></i> 3 Months Duration</span>
+      <span><div class="stars" style="display:inline;">★★★★★</div> 5.0 Rating</span>
+      <span><i class="fas fa-dollar-sign"></i> $8,500 Project Value</span>
+    </div>
+
+    <img src="assets/images/project_web_app.png" alt="SaaS Dashboard Platform" class="detail-hero__image fade-up" />
+  </div>
+</div>
+
+<!-- META GRID -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+
+    <div class="detail-meta-grid fade-up">
+      <div class="detail-meta-item">
+        <div class="detail-meta-item__label"><i class="fas fa-user"></i> Client</div>
+        <div class="detail-meta-item__value">James Sullivan — USA</div>
+      </div>
+      <div class="detail-meta-item">
+        <div class="detail-meta-item__label"><i class="fas fa-layer-group"></i> Category</div>
+        <div class="detail-meta-item__value">Web Development / SaaS</div>
+      </div>
+      <div class="detail-meta-item">
+        <div class="detail-meta-item__label"><i class="fas fa-tools"></i> Tech Stack</div>
+        <div class="detail-meta-item__value">React, Node.js, AWS, Redis</div>
+      </div>
+      <div class="detail-meta-item">
+        <div class="detail-meta-item__label"><i class="fas fa-check-circle"></i> Status</div>
+        <div class="detail-meta-item__value" style="color:#14be46;">Completed ✓</div>
+      </div>
+    </div>
+
+    <div class="detail-layout">
+      <!-- MAIN CONTENT -->
+      <div class="project-content">
+        <h2 style="font-size:1.6rem; margin-bottom:1rem;">Project Overview</h2>
+        <p>The client required a comprehensive multi-tenant SaaS analytics platform to replace their legacy spreadsheet-based reporting system. The platform needed to support thousands of simultaneous users, provide real-time data visualization, and generate automated PDF/Excel reports on a scheduled basis.</p>
+        <p>This was a complex end-to-end engagement covering everything from database schema design and RESTful API development to pixel-perfect React frontend implementation and AWS production deployment.</p>
+
+        <h3>Key Challenges & Solutions</h3>
+        <ul>
+          <li>Designed a multi-tenant architecture with complete data isolation using PostgreSQL row-level security</li>
+          <li>Implemented WebSocket-based real-time data updates with Redis pub/sub for sub-second latency</li>
+          <li>Built a custom charting library wrapper on top of Recharts for consistent branding</li>
+          <li>Set up CI/CD pipeline with GitHub Actions, Docker, and AWS ECS for zero-downtime deployments</li>
+          <li>Implemented role-based access control with 5 permission levels (Admin, Manager, Analyst, Viewer, API-only)</li>
+        </ul>
+
+        <h3>Project Results</h3>
+        <div class="result-grid">
+          <div class="result-card">
+            <div class="result-card__value">70%</div>
+            <div class="result-card__label">Reduction in report generation time</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card__value">10K+</div>
+            <div class="result-card__label">Concurrent users supported</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card__value">99.9%</div>
+            <div class="result-card__label">Uptime SLA achieved</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card__value">5★</div>
+            <div class="result-card__label">Client rating on Upwork</div>
+          </div>
+        </div>
+
+        <!-- IMAGE GALLERY -->
+        <h3>Project Screenshots</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/images/project_web_app.png" alt="Dashboard Main View" />
+            <div class="gallery-item__overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/project_data_dashboard.png" alt="Analytics View" />
+            <div class="gallery-item__overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/project_ecommerce.png" alt="Reports Module" />
+            <div class="gallery-item__overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/project_automation.png" alt="Admin Panel" />
+            <div class="gallery-item__overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- VIDEO DEMO -->
+        <h3>Demo Video</h3>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" id="videoTrigger">
+          <img src="assets/images/project_web_app.png" alt="Video thumbnail" />
+          <div class="video-play-btn" style="position:relative; z-index:2;">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+
+        <!-- Client Review -->
+        <h3>Client Feedback</h3>
+        <div class="testimonial-card" style="margin-top:0;">
+          <div class="testimonial-card__quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-card__text">Absolutely outstanding work. Delivered our SaaS dashboard ahead of schedule with exceptional attention to detail. The real-time features work flawlessly and the codebase is clean and well-documented. Will hire again without hesitation.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JS</div>
+            <div>
+              <div class="testimonial-card__name">James Sullivan</div>
+              <div class="testimonial-card__role">CEO, TechVault Inc. — USA 🇺🇸</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <h3 style="font-size:1.1rem; margin-bottom:1.25rem;">Project Info</h3>
+          <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.875rem;">
+            <div>
+              <div style="color:var(--clr-mid); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.3rem;">Budget</div>
+              <div style="font-weight:600;">$8,500 Fixed Price</div>
+            </div>
+            <div>
+              <div style="color:var(--clr-mid); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.3rem;">Timeline</div>
+              <div style="font-weight:600;">3 Months</div>
+            </div>
+            <div>
+              <div style="color:var(--clr-mid); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.3rem;">Delivered</div>
+              <div style="font-weight:600; color:#14be46;">3 days early ✓</div>
+            </div>
+            <div>
+              <div style="color:var(--clr-mid); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Tech Stack</div>
+              <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                <span class="tag">React</span><span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+                <span class="tag">AWS ECS</span><span class="tag">Docker</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:1.75rem; display:flex; flex-direction:column; gap:0.75rem;">
+            <a href="contact.html" class="btn btn--primary" style="width:100%; justify-content:center;">
+              <i class="fas fa-envelope"></i> Discuss Similar Project
+            </a>
+            <a href="https://www.upwork.com" target="_blank" class="btn btn--outline" style="width:100%; justify-content:center;">
+              <i class="fab fa-upwork"></i> View on Upwork
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER PROJECTS -->
+    <div style="margin-top:5rem;">
+      <div class="section-header fade-up">
+        <span class="section-label">More Work</span>
+        <h2 class="section-title">Other Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card stagger-item">
+          <div class="project-card__image">
+            <img src="assets/images/project_mobile_app.png" alt="Mobile App" />
+            <div class="project-card__overlay">
+              <a href="project-detail.html?id=2" class="btn btn--primary"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags"><span class="tag">React Native</span><span class="tag">Firebase</span></div>
+            <h3 class="project-card__title">Fintech Mobile Banking App</h3>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__meta">2 months</span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="project-card stagger-item">
+          <div class="project-card__image">
+            <img src="assets/images/project_ecommerce.png" alt="E-Commerce" />
+            <div class="project-card__overlay">
+              <a href="project-detail.html?id=5" class="btn btn--primary"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags"><span class="tag">Next.js</span><span class="tag">Stripe</span></div>
+            <h3 class="project-card__title">Premium Fashion E-Commerce Store</h3>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__meta">5 weeks</span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="project-card stagger-item">
+          <div class="project-card__image">
+            <img src="assets/images/project_data_dashboard.png" alt="Data Pipeline" />
+            <div class="project-card__overlay">
+              <a href="project-detail.html?id=3" class="btn btn--primary"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags"><span class="tag">Python</span><span class="tag">Airflow</span></div>
+            <h3 class="project-card__title">Enterprise ETL & BI Pipeline</h3>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__meta">4 months</span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="projects.html" class="btn btn--outline"><i class="fas fa-th-large"></i> View All Projects</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose"><i class="fas fa-times"></i></button>
+  <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery image" />
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal__inner">
+    <div class="video-modal__header">
+      <span style="font-weight:600;">Project Demo</span>
+      <button class="video-modal__close" id="videoClose"><i class="fas fa-times"></i></button>
+    </div>
+    <iframe id="videoFrame" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Dev<span>Folio</span></div>
+        <p class="footer__brand-desc">Top-Rated Upwork freelancer delivering premium software solutions since 2018.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Let's Connect</div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.upwork.com" target="_blank" class="social-link"><i class="fab fa-upwork"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 DevFolio. All rights reserved.</span>
+      <span style="color: var(--clr-accent);">Top Rated Plus · 100% Job Success</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/page-effects.js"></script>
+<script>
+  // Wire up video thumb click
+  document.getElementById('videoTrigger')?.addEventListener('click', function() {
+    const src = this.dataset.video;
+    const modal = document.getElementById('videoModal');
+    const frame = document.getElementById('videoFrame');
+    if (modal && frame && src) {
+      frame.src = src;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+</script>
+</body>
+</html>
